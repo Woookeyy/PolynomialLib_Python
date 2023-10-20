@@ -5,7 +5,7 @@ def get_num_superscript(num):
     num = str(num)
     result = str()
 
-    digit_dict = {
+    superscript_dict = {
         '0': '\u2070',
         '1': '\u00b9',
         '2': '\u00b2',
@@ -19,7 +19,7 @@ def get_num_superscript(num):
     }
 
     for dig in num:
-        result += digit_dict[dig]
+        result += superscript_dict[dig]
 
     return result
 
