@@ -152,12 +152,19 @@ class Polynomial:
         new_coefficients.reverse()
 
         return Polynomial(new_coefficients)
+    
+    def __imul__(self, other):
+        return self.__mul__(other)
 
     def deg(self):
         return self._deg
 
     def get_coefficient(self, x_power):
         return self._coefficients[x_power]
+        
+    def get_value(self, x):
 
-    def __imul__(self, other):
-        return self.__mul__(other)
+        result = sum([coefficient * pow(x, x_pow) for x_pow, coefficient in enumerate(self._coefficients)])
+
+        return result
+        
